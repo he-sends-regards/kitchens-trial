@@ -7,7 +7,7 @@ interface Props {
   className?: string;
   color?: string;
   textTransform?: "uppercase" | "initial";
-  size?: "BODY" | "BODY2" | "H1" | "H2" | "H3";
+  size?: "BODY" | "BODY2" | "H1" | "H2" | "H3" | "H4";
   variant?: "TEXT" | "LINK";
 }
 
@@ -34,7 +34,7 @@ const Typography: FC<Props> = ({
 
 interface TypographyStyledProps {
   $color: string;
-  $size: "BODY" | "BODY2" | "H1" | "H2" | "H3";
+  $size: "BODY" | "BODY2" | "H1" | "H2" | "H3" | "H4";
   $textTransform?: string;
   $variant?: "TEXT" | "LINK";
   $fontWeight?: string | number;
@@ -50,6 +50,13 @@ const TypographyStyled = styled.span<TypographyStyledProps>`
     props.$fontWeight || props.$size === "BODY" || props.$size === "BODY2"
       ? 400
       : 700};
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+
+  &:hover {
+    text-decoration: ${(props) =>
+      props.$variant === "LINK" ? "underline" : "none"};
+  }
 `;
 
 export default Typography;

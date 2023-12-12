@@ -21,6 +21,7 @@ const SIZES = {
       H1: "52px",
       H2: "42px",
       H3: "32px",
+      H4: "24px",
     },
     LINE_HEIGHT: {
       BODY: "18px",
@@ -28,6 +29,7 @@ const SIZES = {
       H1: "58px",
       H2: "52px",
       H3: "42px",
+      H4: "42px",
     },
   },
 };

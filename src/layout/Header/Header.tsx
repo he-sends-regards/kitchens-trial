@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button, Typography, Logo } from "../../components";
+import { Button, Typography, Logo, Socials } from "../../components";
 import { IMAGES } from "../../App";
 import { COLORS, DEVICE } from "../../style";
 
@@ -21,11 +21,7 @@ const Header = () => {
         </MobileMenu>
 
         <DesktopMenu>
-          <Socials>
-            <SocialImg src={IMAGES.instagramLogoSrc} />
-            <SocialImg src={IMAGES.facebookLogoSrc} />
-            <SocialImg src={IMAGES.twitterLogoSrc} />
-          </Socials>
+          <Socials />
 
           <NavLinks>
             <NavLink>Shop</NavLink>
@@ -102,18 +98,6 @@ const DesktopMenu = styled.div`
 
   @media ${DEVICE.lg} {
     display: none;
-  }
-`;
-
-const Socials = styled.div`
-  display: flex;
-  gap: 8px;
-`;
-
-const SocialImg = styled.img`
-  cursor: pointer;
-  &:hover {
-    filter: invert();
   }
 `;
 

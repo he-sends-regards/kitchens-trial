@@ -74,7 +74,7 @@ const ImagesList = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 0 17vw;
+  padding: 0 15vw;
 
   @media ${DEVICE.lg} {
     padding: 0 14vw;
