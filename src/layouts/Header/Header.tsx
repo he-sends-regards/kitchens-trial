@@ -51,7 +51,7 @@ const HeaderWrapper = styled.header`
   padding: 40px 17vw;
 
   @media ${DEVICE.xl} {
-    padding: 35px 15vw;
+    padding: 35px 5vw;
   }
 `;
 
@@ -75,6 +75,7 @@ const CartBtn = styled(Button)`
 `;
 const BurgerMenuIconWrapper = styled.div`
   width: 30%;
+  display: flex;
 `;
 
 const MobileMenu = styled.div`

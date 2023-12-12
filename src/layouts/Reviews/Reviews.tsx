@@ -69,6 +69,7 @@ const ContentWrapper = styled.div`
 
   @media ${DEVICE.md} {
     width: 60%;
+    padding: 20px 0;
     margin: 0;
   }
 `;
