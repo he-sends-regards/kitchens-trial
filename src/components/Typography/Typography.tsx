@@ -52,6 +52,8 @@ const TypographyStyled = styled.span<TypographyStyledProps>`
       : 700};
   text-underline-offset: 2px;
   text-decoration-thickness: 2px;
+  font-family: ${(props) =>
+    props.$size === "BODY" ? "inherit" : "Helvetica, sans-serif"};
 
   &:hover {
     text-decoration: ${(props) =>
