@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { IMAGES } from "../../App";
 import { FC } from "react";
 import { DEVICE } from "../../style";
+import IMAGES from "../../utils/images";
 
 const Socials: FC<{ className?: string }> = ({ className }) => {
   return (

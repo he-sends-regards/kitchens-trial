@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Button, Typography, Logo, Socials } from "../../components";
-import { IMAGES } from "../../App";
 import { COLORS, DEVICE } from "../../style";
+import IMAGES from "../../utils/images";
 
 const Header = () => {
   return (
@@ -13,7 +13,6 @@ const Header = () => {
           </BurgerMenuIconWrapper>
           <Logo />
           <CartBtn
-            onClick={() => {}}
             size="SMALL"
             text=""
             iconEnd={<ShopCartIcon src={IMAGES.shopCart} />}
@@ -36,7 +35,6 @@ const Header = () => {
           </NavLinks>
 
           <Button
-            onClick={() => {}}
             size="SMALL"
             text="My order"
             iconEnd={<ShopCartIcon src={IMAGES.shopCart} />}

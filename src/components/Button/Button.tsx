@@ -5,7 +5,7 @@ import { COLORS, SIZES } from "../../style";
 interface Props {
   text: string;
   className?: string;
-  onClick: () => void;
+  onClick?: () => void;
   iconEnd?: JSX.Element;
   color?: "ACTIVE" | "DEFAULT";
   size?: "SMALL" | "DEFAULT";

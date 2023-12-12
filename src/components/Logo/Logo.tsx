@@ -1,9 +1,8 @@
 import styled from "styled-components";
-
-const LOGO_SRC = new URL("../../assets/logo.png", import.meta.url).href;
+import IMAGES from "../../utils/images";
 
 const Logo = () => {
-  return <LogoStyled src={LOGO_SRC} />;
+  return <LogoStyled src={IMAGES.logo} />;
 };
 
 const LogoStyled = styled.img`

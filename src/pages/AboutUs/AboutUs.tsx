@@ -20,7 +20,7 @@ const AboutUs = () => {
           feugiat in finibus vitae, sollicitudin id purus. Ut imperdiet, magna
           eu pharetra tincidunt, mauris purus ultrices.
         </Typography>
-        <AboutUsButton onClick={() => {}} text="About us" color="ACTIVE" />
+        <AboutUsButton text="About us" color="ACTIVE" />
       </AboutUsContent>
     </Wrapper>
   );
@@ -44,6 +44,8 @@ const ImageStyled = styled.img`
 
   @media ${DEVICE.lg} {
     width: 100%;
+    height: 45vh;
+    margin-bottom: 20px;
   }
 `;
 

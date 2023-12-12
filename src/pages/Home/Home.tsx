@@ -1,12 +1,33 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Header } from "../../layout";
 import { Button, Typography } from "../../components";
-import homBgSrc from "../../assets/homeBg.png";
 import { COLORS } from "../../style";
+import IMAGES from "../../utils/images";
 
 const Home = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const bgImages = [IMAGES.homeBg1, IMAGES.homeBg2, IMAGES.homeBg3];
+
+  const handleIndicatorClick = (index: number) => {
+    setActiveSlide(index);
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setActiveSlide(activeSlide === 2 ? 0 : activeSlide + 1);
+    }, 2000);
+
+    return () => clearInterval(intervalId);
+  });
+
   return (
-    <Wrapper>
+    <Wrapper
+      style={{
+        background: `url(${bgImages[activeSlide]}) no-repeat center center / cover`,
+      }}
+    >
       <Header />
 
       <HomeTextWrapper>
@@ -19,11 +40,19 @@ const Home = () => {
         </HomeTitle>
 
         <div>
-          <Button text="Order now" color="ACTIVE" onClick={() => {}} />
+          <Button text="Order now" color="ACTIVE" />
         </div>
       </HomeTextWrapper>
 
-      <div>1 2 3</div>
+      <CarouselIndicators>
+        {bgImages.map((_, index) => (
+          <Indicator
+            key={index}
+            active={index === activeSlide}
+            onClick={() => handleIndicatorClick(index)}
+          />
+        ))}
+      </CarouselIndicators>
     </Wrapper>
   );
 };
@@ -35,7 +64,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
-  background: transparent url(${homBgSrc}) no-repeat center center / cover;
+  transition: background 0.5s ease;
 `;
 
 const HomeTitle = styled(Typography)`
@@ -48,6 +77,21 @@ const HomeTextWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 12px;
+`;
+
+const CarouselIndicators = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  padding: 30px;
+`;
+
+const Indicator = styled.div<{ active: boolean }>`
+  width: 50px;
+  height: 5px;
+  background-color: ${({ active }) => (active ? COLORS.ACTIVE : COLORS.WHITE)};
+  cursor: pointer;
+  border-radius: 3px;
 `;
 
 export default Home;

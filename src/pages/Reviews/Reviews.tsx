@@ -3,9 +3,9 @@ import { COLORS, DEVICE } from "../../style";
 import { Button, Typography } from "../../components";
 import { useState } from "react";
 import { MOCK_REVIEWS } from "../../mocks/reviews";
-import { IMAGES } from "../../App";
+import IMAGES from "../../utils/images";
 
-const FAQ = () => {
+const Reviews = () => {
   const [activeReviewIndex, setActiveReviewIndex] = useState(0);
 
   const handleLeftClick = () => {
@@ -38,11 +38,7 @@ const FAQ = () => {
           {MOCK_REVIEWS[activeReviewIndex].author}
         </Typography>
 
-        <FaqButton
-          onClick={() => {}}
-          text="Frequently Asked Questions"
-          color="ACTIVE"
-        />
+        <FaqButton text="Frequently Asked Questions" color="ACTIVE" />
       </ContentWrapper>
       <ArrowButton
         $isActive={activeReviewIndex === MOCK_REVIEWS.length - 1}
@@ -102,4 +98,4 @@ const ArrowButton = styled.button<{ $isActive: boolean; $url: string }>`
   }
 `;
 
-export default FAQ;
+export default Reviews;
