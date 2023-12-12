@@ -3,7 +3,8 @@ import { COLORS, DEVICE } from "../../style";
 import { Button, Typography } from "../../components";
 import { useState } from "react";
 import { MOCK_REVIEWS } from "../../mocks/reviews";
-import IMAGES from "../../utils/images";
+import leftIconSrc from "../../assets/leftIcon.svg";
+import rightIconSrc from "../../assets/rightIcon.svg";
 
 const Reviews = () => {
   const [activeReviewIndex, setActiveReviewIndex] = useState(0);
@@ -22,7 +23,7 @@ const Reviews = () => {
     <Wrapper>
       <ArrowButton
         $isActive={activeReviewIndex === 0}
-        $url={IMAGES.leftIconSrc}
+        $url={leftIconSrc}
         onClick={handleLeftClick}
       />
       <ContentWrapper>
@@ -42,7 +43,7 @@ const Reviews = () => {
       </ContentWrapper>
       <ArrowButton
         $isActive={activeReviewIndex === MOCK_REVIEWS.length - 1}
-        $url={IMAGES.rightIconSrc}
+        $url={rightIconSrc}
         onClick={handleRightClick}
       />
     </Wrapper>
