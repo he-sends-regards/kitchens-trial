@@ -7,6 +7,8 @@ export const IMAGES = {
   twitterLogoSrc: new URL("./assets/twitter.svg", import.meta.url).href,
   homeBg: new URL("./assets/homeBg.png", import.meta.url).href,
   burgerMenuSrc: new URL("./assets/burger-menu.svg", import.meta.url).href,
+  leftIconSrc: new URL("./assets/leftIcon.svg", import.meta.url).href,
+  rightIconSrc: new URL("./assets/rightIcon.svg", import.meta.url).href,
 };
 
 function App() {

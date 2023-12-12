@@ -3,8 +3,7 @@ import { COLORS, DEVICE } from "../../style";
 import { Button, Typography } from "../../components";
 import { useState } from "react";
 import { MOCK_REVIEWS } from "../../mocks/reviews";
-import leftIconSrc from "../../assets/leftIcon.svg";
-import rightIconSrc from "../../assets/rightIcon.svg";
+import { IMAGES } from "../../App";
 
 const FAQ = () => {
   const [activeReviewIndex, setActiveReviewIndex] = useState(0);
@@ -23,7 +22,7 @@ const FAQ = () => {
     <Wrapper>
       <ArrowButton
         $isActive={activeReviewIndex === 0}
-        $url={leftIconSrc}
+        $url={IMAGES.leftIconSrc}
         onClick={handleLeftClick}
       />
       <ContentWrapper>
@@ -47,7 +46,7 @@ const FAQ = () => {
       </ContentWrapper>
       <ArrowButton
         $isActive={activeReviewIndex === MOCK_REVIEWS.length - 1}
-        $url={rightIconSrc}
+        $url={IMAGES.rightIconSrc}
         onClick={handleRightClick}
       />
     </Wrapper>
