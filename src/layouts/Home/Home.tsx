@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Header } from "../../layout";
+import { Header } from "..";
 import { Button, Typography } from "../../components";
 import { COLORS } from "../../style";
 import IMAGES from "../../utils/images";

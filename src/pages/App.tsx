@@ -1,15 +1,15 @@
-import { AboutUs, Reviews, Footer, Gallery, Home } from "./pages";
-import "./utils/images";
+import { AboutUs, Reviews, Footer, Gallery, Home } from "../layouts";
+import "../utils/images";
 
 function App() {
   return (
-    <div>
+    <>
       <Home />
       <AboutUs />
       <Reviews />
       <Gallery />
       <Footer />
-    </div>
+    </>
   );
 }
 
