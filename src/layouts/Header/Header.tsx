@@ -1,15 +1,29 @@
 import styled from "styled-components";
-import { Button, Typography, Logo, Socials } from "../../components";
+import { Button, Typography, Logo, Socials, Drawer } from "../../components";
 import { COLORS, DEVICE } from "../../style";
 import IMAGES from "../../utils/images";
+import { useState } from "react";
 
 const Header = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const onBurgerMenuClick = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
+
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+  };
+
   return (
     <HeaderWrapper>
       <HeaderInner>
         <MobileMenu>
           <BurgerMenuIconWrapper>
-            <BurgerMenuIcon src={IMAGES.burgerMenuSrc} />
+            <BurgerMenuIcon
+              onClick={onBurgerMenuClick}
+              src={IMAGES.burgerMenuSrc}
+            />
           </BurgerMenuIconWrapper>
           <Logo />
           <CartBtn
@@ -41,6 +55,13 @@ const Header = () => {
           />
         </DesktopMenu>
       </HeaderInner>
+
+      <Drawer isOpen={isDrawerOpen} onClose={closeDrawer}>
+        <NavLink onClick={closeDrawer}>Shop</NavLink>
+        <NavLink onClick={closeDrawer}>Plan my kitchen</NavLink>
+        <NavLink onClick={closeDrawer}>About us</NavLink>
+        <NavLink onClick={closeDrawer}>Gallery</NavLink>
+      </Drawer>
     </HeaderWrapper>
   );
 };
@@ -109,11 +130,12 @@ const NavLink = styled(Typography).attrs({
   variant: "LINK",
   color: COLORS.TYPOGRAPHY.WHITE,
   textTransform: "uppercase",
-})``;
+})<{ onClick?: () => void }>``;
 
 const BurgerMenuIcon = styled.img`
   width: 24px;
   filter: invert();
+  cursor: pointer;
 `;
 
 const ShopCartIcon = styled.img`

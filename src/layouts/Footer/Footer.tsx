@@ -64,6 +64,10 @@ const LinksBlock = styled.div`
   display: flex;
   flex-direction: column;
   width: 25%;
+
+  @media ${DEVICE.lg} {
+    width: 40%;
+  }
 `;
 
 const LinkBlockTitle = styled(Typography).attrs({
@@ -71,6 +75,10 @@ const LinkBlockTitle = styled(Typography).attrs({
   size: "H4",
 })`
   margin-bottom: 25px;
+
+  @media ${DEVICE.lg} {
+    margin-bottom: 10px;
+  }
 `;
 const Link = styled(Typography).attrs({
   color: COLORS.TYPOGRAPHY.WHITE,
@@ -84,14 +92,17 @@ const Link = styled(Typography).attrs({
 const LinksSection = styled.section`
   display: flex;
   justify-content: space-between;
-  width: 45vw;
+  width: 55vw;
+  flex-wrap: wrap;
   text-align: left;
 
   @media ${DEVICE.lg} {
     width: 60vw;
     text-align: center;
+    gap: 20px;
   }
   @media ${DEVICE.md} {
+    justify-content: space-around;
     width: 65vw;
   }
   @media ${DEVICE.sm} {

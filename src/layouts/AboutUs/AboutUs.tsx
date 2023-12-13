@@ -62,9 +62,11 @@ const AboutUsContent = styled.section`
     margin-left: 0;
     padding: 20px;
     align-items: center;
+    box-sizing: border-box;
   }
 
   @media ${DEVICE.md} {
+    margin-left: 0;
     width: 90%;
   }
 `;

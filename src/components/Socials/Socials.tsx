@@ -18,7 +18,6 @@ const Wrapper = styled.div`
   gap: 8px;
 
   @media ${DEVICE.lg} {
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }

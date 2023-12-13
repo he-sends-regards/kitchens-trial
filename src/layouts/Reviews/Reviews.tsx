@@ -66,6 +66,7 @@ const ContentWrapper = styled.div`
   gap: 11px;
   text-align: center;
   margin: 0 8vw;
+  padding: 30px 0;
 
   @media ${DEVICE.md} {
     width: 60%;
